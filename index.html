@@ -40,7 +40,6 @@
           
           <div class="controls">
               <button onclick="checkInvites()">Check Invites</button>
-              <button onclick="copyInvalidInvites()" id="copyInvalidBtn" style="display: none; background-color: #f04747;">Copy Invalid Links</button>
           </div>
 
           <div id="stats-dashboard" style="display: none;">
@@ -68,7 +67,10 @@
               <div id="validInvites" class="invite-list"></div>
             </div>
             <div class="result-section">
-              <h2>Invalid Invites</h2>
+              <div class="section-header">
+                <h2>Invalid Invites</h2>
+                <button onclick="copyInvalidInvites()" id="copyInvalidBtn" class="sm-btn" style="display: none;">Copy</button>
+              </div>
               <div id="invalidInvites" class="invite-list"></div>
             </div>
             <div class="result-section">

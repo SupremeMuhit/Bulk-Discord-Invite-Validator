@@ -178,12 +178,31 @@ button:active {
 }
 
 .result-section h2 {
-    margin-top: 0;
+    margin: 0;
     font-size: 18px;
+    color: #ffffff;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-bottom: 2px solid #2f3136;
     padding-bottom: 12px;
     margin-bottom: 15px;
-    color: #ffffff;
+    min-height: 40px; /* Ensure height consistency */
+}
+
+.sm-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+    background-color: #ed4245; /* Red for invalid actions */
+    box-shadow: none;
+}
+
+.sm-btn:hover {
+    background-color: #c03537;
+    transform: translateY(-1px);
 }
 
 .invite-list {
