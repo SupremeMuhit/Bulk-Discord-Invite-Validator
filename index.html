@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulk Discord Invite Validator</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Discord Icon -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <h1>Bulk Discord Invite Validator</h1>
+      </div>
+      <div class="header-right">
+          <span class="author-text">by SupremeMuhit</span>
+          <a href="https://discord.com/users/1341440502104592507" target="_blank" class="discord-link" title="Contact on Discord">
+              <i class="fa-brands fa-discord"></i>
+          </a>
+      </div>
+    </header>
+    <div class="container">
+      
+      <div class="mode-switcher">
+          <button class="mode-btn active" onclick="switchMode('bulk')">Bulk Validator</button>
+          <button class="mode-btn" onclick="switchMode('single')">Single Detailed</button>
+      </div>
+
+      <!-- Bulk Mode Content -->
+      <div id="bulk-mode">
+          <textarea id="inviteInput" placeholder="Enter Discord invite links (one per line)" rows="10"></textarea>
+          
+          <div class="controls">
+              <button onclick="checkInvites()">Check Invites</button>
+              <button onclick="copyInvalidInvites()" id="copyInvalidBtn" style="display: none; background-color: #f04747;">Copy Invalid Links</button>
+          </div>
+
+          <div id="stats-dashboard" style="display: none;">
+              <div class="stat-card">
+                  <h3>Entered</h3>
+                  <p id="stat-entered">0</p>
+              </div>
+              <div class="stat-card">
+                  <h3>Checked</h3>
+                  <p id="stat-checked">0</p>
+              </div>
+              <div class="stat-card">
+                  <h3>Valid</h3>
+                  <p id="stat-valid">0</p>
+              </div>
+              <div class="stat-card">
+                  <h3>Invalid</h3>
+                  <p id="stat-invalid">0</p>
+              </div>
+          </div>
+
+          <div id="results">
+            <div class="result-section">
+              <h2>Valid Invites</h2>
+              <div id="validInvites" class="invite-list"></div>
+            </div>
+            <div class="result-section">
+              <h2>Invalid Invites</h2>
+              <div id="invalidInvites" class="invite-list"></div>
+            </div>
+            <div class="result-section">
+                <h2>Errors</h2>
+                <div id="errorInvites" class="invite-list"></div>
+            </div>
+          </div>
+      </div>
+
+      <!-- Single Detailed Mode Content -->
+      <div id="single-mode" style="display: none;">
+          <div class="single-input-container">
+              <input type="text" id="singleInviteInput" placeholder="Enter a single Discord invite link">
+              <button onclick="checkSingleInvite()">Validate</button>
+          </div>
+          <div id="single-result-container"></div>
+      </div>
+
+      <div class="disclaimer">
+      <div class="disclaimer">
+        <p>Disclaimer: Results may be wrong due to API caching or rate limits. Please double check critical links.</p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
